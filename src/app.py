@@ -21,6 +21,42 @@ app.mount("/static", StaticFiles(directory=os.path.join(Path(__file__).parent,
 
 # In-memory activity database
 activities = {
+    "Basketball": {
+        "description": "Team sport focusing on basketball skills and competition",
+        "schedule": "Mondays and Wednesdays, 4:00 PM - 5:30 PM",
+        "max_participants": 15,
+        "participants": ["alex@mergington.edu"]
+        },
+        "Tennis Club": {
+        "description": "Learn tennis techniques and participate in matches",
+        "schedule": "Saturdays, 10:00 AM - 12:00 PM",
+        "max_participants": 10,
+        "participants": ["james@mergington.edu"]
+        },
+        "Drama Club": {
+        "description": "Perform in plays and develop acting skills",
+        "schedule": "Thursdays, 4:00 PM - 5:30 PM",
+        "max_participants": 25,
+        "participants": ["isabella@mergington.edu", "lucas@mergington.edu"]
+        },
+        "Art Studio": {
+        "description": "Create paintings, drawings, and sculptures",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 18,
+        "participants": ["mia@mergington.edu"]
+        },
+        "Math Olympiad": {
+        "description": "Solve challenging math problems and compete nationally",
+        "schedule": "Tuesdays, 4:00 PM - 5:00 PM",
+        "max_participants": 15,
+        "participants": ["ryan@mergington.edu", "sarah@mergington.edu"]
+        },
+        "Debate Team": {
+        "description": "Develop public speaking and argumentation skills",
+        "schedule": "Mondays and Fridays, 3:30 PM - 4:30 PM",
+        "max_participants": 20,
+        "participants": ["noah@mergington.edu"]
+        },
     "Chess Club": {
         "description": "Learn strategies and compete in chess tournaments",
         "schedule": "Fridays, 3:30 PM - 5:00 PM",
@@ -64,4 +100,5 @@ def signup_for_activity(activity_name: str, email: str):
 
     # Add student
     activity["participants"].append(email)
+    # Validate student is not already signed up
     return {"message": f"Signed up {email} for {activity_name}"}
